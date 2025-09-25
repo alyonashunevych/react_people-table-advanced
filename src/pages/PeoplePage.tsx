@@ -6,7 +6,7 @@ import { getPeople } from '../api';
 import { Person } from '../types';
 
 export const PeoplePage = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [people, setPeople] = useState<Person[]>([]);
   const [loadingError, setLoadingError] = useState('');
 

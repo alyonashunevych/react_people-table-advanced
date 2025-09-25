@@ -2,11 +2,12 @@ import classNames from 'classnames';
 import { SearchLink } from './SearchLink';
 import { useSearchParams } from 'react-router-dom';
 
+const allCenturies = ['16', '17', '18', '19', '20'];
+
 export const CenturyFilter = () => {
   const [searchParams] = useSearchParams();
 
   const centuries = searchParams.getAll('centuries');
-  const allCenturies = ['16', '17', '18', '19', '20'];
 
   const isInfo = (century: string) => {
     return centuries.includes(century);

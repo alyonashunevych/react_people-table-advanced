@@ -13,7 +13,7 @@ export const PersonLink: React.FC<Props> = ({ person }) => {
     <Link
       to={{
         pathname: `/people/${person.slug}`,
-        search: searchParams.toString(),
+        search: searchParams.toString() || undefined,
       }}
       className={classNames({ 'has-text-danger': person.sex === 'f' })}
     >

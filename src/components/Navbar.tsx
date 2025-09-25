@@ -24,7 +24,7 @@ export const Navbar = () => {
             className={getLinkClass}
             to={{
               pathname: `/people`,
-              search: searchParams.toString(),
+              search: searchParams.toString() || undefined,
             }}
           >
             People

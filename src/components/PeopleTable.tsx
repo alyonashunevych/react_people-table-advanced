@@ -32,8 +32,8 @@ export const PeopleTable: React.FC<Props> = ({ people }) => {
       result = result.filter(
         person =>
           person.name.toLowerCase().includes(query) ||
-          person.motherName?.toLowerCase().includes(query) ||
-          person.fatherName?.toLowerCase().includes(query),
+          (person.motherName || '').toLowerCase().includes(query) ||
+          (person.fatherName || '').toLowerCase().includes(query),
       );
     }
 
@@ -101,7 +101,7 @@ export const PeopleTable: React.FC<Props> = ({ people }) => {
     }
 
     if (sort === newParam && !order) {
-      return { order: 'desc' };
+      return { sort: newParam, order: 'desc' };
     }
 
     return { sort: null, order: null };
