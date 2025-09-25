@@ -5,16 +5,16 @@ import { useSearchParams } from 'react-router-dom';
 export const CenturyFilter = () => {
   const [searchParams] = useSearchParams();
 
-  const centuries = searchParams.getAll('centuries') || [];
+  const centuries = searchParams.getAll('centuries');
   const allCenturies = ['16', '17', '18', '19', '20'];
 
   const isInfo = (century: string) => {
-    return searchParams.getAll('centuries').includes(century);
+    return centuries.includes(century);
   };
 
   const allCenturiesAreActive =
     centuries.length === allCenturies.length &&
-    centuries.every((cen, i) => cen === allCenturies[i]);
+    allCenturies.every(c => centuries.includes(c));
 
   const getNewCenturies = (century: string) => {
     const newCenturies = centuries.includes(century)

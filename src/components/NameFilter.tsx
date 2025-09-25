@@ -13,7 +13,7 @@ export const NameFilter = () => {
   };
 
   const handleQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchWith({ query: event.target.value || null });
+    setSearchWith({ query: event.target.value.trim() || null });
   };
 
   return (

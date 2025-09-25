@@ -57,9 +57,9 @@ export const PeopleTable: React.FC<Props> = ({ people }) => {
       result.sort((a, b) => {
         switch (sort) {
           case 'name':
-            return a.name.localeCompare(b.name);
+            return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
           case 'sex':
-            return a.sex.localeCompare(b.sex);
+            return a.sex.toLowerCase().localeCompare(b.sex.toLowerCase());
           case 'born':
             return a.born - b.born;
           case 'died':
@@ -136,7 +136,7 @@ export const PeopleTable: React.FC<Props> = ({ people }) => {
         {filteredPeople.map(person => (
           <tr
             data-cy="person"
-            key={person.name}
+            key={person.slug}
             className={classNames({
               'has-background-warning': person.slug === slug,
             })}

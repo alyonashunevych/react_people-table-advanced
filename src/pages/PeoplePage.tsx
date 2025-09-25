@@ -27,7 +27,7 @@ export const PeoplePage = () => {
       <div className="block">
         <div className="columns is-desktop is-flex-direction-row-reverse">
           <div className="column is-7-tablet is-narrow-desktop">
-            {!loading && <PeopleFilters />}
+            {!loading && !loadingError && <PeopleFilters />}
           </div>
 
           <div className="column">
